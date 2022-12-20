@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+import AllParking from './pages/allParking/allParking';
+import NavBar from './components/navBar/navBar';
+import NewParking from './pages/new-parking/newParking';
+// import AllParking from './pages/allParking';
+import FavoritesPage from '../src/pages/favorite-parking/favorite-parking'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<AllParking />} />
+        <Route path="newParking" element={<NewParking />} />
+        <Route path='/favorites' element={<FavoritesPage />}>
+        
+        </Route>
+
+      </Routes>
+      {/* <AllParking /> */}
+ 
     </div>
+
   );
 }
 
